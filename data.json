@@ -1,14 +1,15 @@
-[
+{
+  "books": [
     {
       "id": 1,
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
       "category": "Fiction",
       "genre": "Classic",
-      "price": 10.99,
+      "price": 15.99,
       "rating": 4,
       "description": "A novel about the American Dream and the roaring twenties.",
-      "image": "https://example.com/great-gatsby.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg",
       "available": true
     },
     {
@@ -17,10 +18,10 @@
       "author": "Michelle Obama",
       "category": "Non-Fiction",
       "genre": "Biography",
-      "price": 14.99,
+      "price": 19.99,
       "rating": 4,
       "description": "An intimate, powerful, and inspiring memoir by the former First Lady of the United States.",
-      "image": "https://example.com/becoming.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8369253-L.jpg",
       "available": false
     },
     {
@@ -29,10 +30,10 @@
       "author": "Frank Herbert",
       "category": "Fiction",
       "genre": "Sci-Fi",
-      "price": 9.99,
+      "price": 14.99,
       "rating": 3,
       "description": "A science fiction saga about politics, religion, and humanity.",
-      "image": "https://example.com/dune.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8319586-L.jpg",
       "available": true
     },
     {
@@ -41,10 +42,10 @@
       "author": "Alex Michaelides",
       "category": "Fiction",
       "genre": "Thriller",
-      "price": 11.49,
+      "price": 16.49,
       "rating": 5,
       "description": "A psychological thriller about a woman who stops speaking after a shocking act of violence.",
-      "image": "https://example.com/silent-patient.jpg",
+      "image": "https://covers.openlibrary.org/b/id/10551409-L.jpg",
       "available": true
     },
     {
@@ -53,10 +54,10 @@
       "author": "Yuval Noah Harari",
       "category": "Non-Fiction",
       "genre": "History",
-      "price": 18.99,
+      "price": 23.99,
       "rating": 2,
       "description": "A groundbreaking narrative of humanity’s creation and evolution.",
-      "image": "https://example.com/sapiens.jpg",
+      "image": "https://covers.openlibrary.org/b/id/11282982-L.jpg",
       "available": false
     },
     {
@@ -65,10 +66,10 @@
       "author": "George Orwell",
       "category": "Fiction",
       "genre": "Dystopian",
-      "price": 8.99,
+      "price": 13.99,
       "rating": 5,
       "description": "A dystopian novel about a totalitarian regime that uses surveillance and propaganda to control society.",
-      "image": "https://example.com/1984.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8221256-L.jpg",
       "available": true
     },
     {
@@ -77,10 +78,10 @@
       "author": "Jane Austen",
       "category": "Fiction",
       "genre": "Romance",
-      "price": 6.99,
+      "price": 11.99,
       "rating": 4,
       "description": "A romantic novel about love, society, and class distinctions in early 19th century England.",
-      "image": "https://example.com/pride-prejudice.jpg",
+      "image": "https://covers.openlibrary.org/b/id/7984916-L.jpg",
       "available": true
     },
     {
@@ -89,10 +90,10 @@
       "author": "Tara Westover",
       "category": "Non-Fiction",
       "genre": "Memoir",
-      "price": 15.49,
+      "price": 20.49,
       "rating": 5,
       "description": "A memoir about a woman who escapes her strict upbringing to pursue education and self-discovery.",
-      "image": "https://example.com/educated.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8371832-L.jpg",
       "available": true
     },
     {
@@ -101,10 +102,10 @@
       "author": "J.D. Salinger",
       "category": "Fiction",
       "genre": "Coming-of-Age",
-      "price": 7.99,
+      "price": 10.99,
       "rating": 3,
       "description": "A story about teenage rebellion and angst, narrated by Holden Caulfield.",
-      "image": "https://example.com/catcher-rye.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8234268-L.jpg",
       "available": false
     },
     {
@@ -113,10 +114,10 @@
       "author": "J.R.R. Tolkien",
       "category": "Fiction",
       "genre": "Fantasy",
-      "price": 12.99,
+      "price": 15.99,
       "rating": 5,
       "description": "A fantasy adventure about Bilbo Baggins and his quest to reclaim a lost treasure.",
-      "image": "https://example.com/hobbit.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8073531-L.jpg",
       "available": true
     },
     {
@@ -125,10 +126,10 @@
       "author": "Paulo Coelho",
       "category": "Fiction",
       "genre": "Philosophical",
-      "price": 10.49,
+      "price": 12.99,
       "rating": 4,
       "description": "A tale of a shepherd boy’s journey to discover his personal legend.",
-      "image": "https://example.com/alchemist.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8372285-L.jpg",
       "available": true
     },
     {
@@ -137,10 +138,10 @@
       "author": "Harper Lee",
       "category": "Fiction",
       "genre": "Classic",
-      "price": 9.49,
+      "price": 17.49,
       "rating": 5,
       "description": "A poignant story of racial injustice and childhood innocence in the American South.",
-      "image": "https://example.com/mockingbird.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8225261-L.jpg",
       "available": true
     },
     {
@@ -149,10 +150,10 @@
       "author": "James Clear",
       "category": "Non-Fiction",
       "genre": "Self-Help",
-      "price": 16.99,
+      "price": 22.99,
       "rating": 5,
       "description": "A practical guide to building good habits and breaking bad ones.",
-      "image": "https://example.com/atomic-habits.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8746781-L.jpg",
       "available": true
     },
     {
@@ -161,10 +162,10 @@
       "author": "Mark Manson",
       "category": "Non-Fiction",
       "genre": "Self-Help",
-      "price": 12.49,
+      "price": 18.99,
       "rating": 4,
       "description": "A counterintuitive approach to living a good life.",
-      "image": "https://example.com/subtle-art.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8764601-L.jpg",
       "available": true
     },
     {
@@ -173,11 +174,11 @@
       "author": "Aldous Huxley",
       "category": "Fiction",
       "genre": "Dystopian",
-      "price": 8.49,
+      "price": 14.49,
       "rating": 4,
       "description": "A dystopian novel exploring a technologically advanced but dehumanized society.",
-      "image": "https://example.com/brave-new-world.jpg",
+      "image": "https://covers.openlibrary.org/b/id/8282001-L.jpg",
       "available": true
     }
   ]
-  
+}

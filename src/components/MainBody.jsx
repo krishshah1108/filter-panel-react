@@ -1,13 +1,12 @@
-import React from "react";
 import FilterPanel from "./FilterPanel";
 import BookList from "./BookList";
-import data from "../assets/data.json";
+import { use } from "react";
 
 const MainBody = () => {
   return (
     <div className='flex flex-1 gap-8'>
       <FilterPanel />
-      <BookList bookData={data} />
+      <BookList />
     </div>
   );
 };
