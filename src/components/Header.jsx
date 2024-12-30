@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="bg-gray-100 flex justify-between items-center shadow-md h-14 p-4 md:p-3">
       <div className="flex items-center md:text-2xl font-bold text-blue-700">
-        JobHunt
+        BookStore
       </div>
       
       <div className="flex items-center justify-center gap-2 w-full md:w-[300px]">
