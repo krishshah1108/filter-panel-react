@@ -13,7 +13,6 @@ const FilterPanel = () => {
   const [sortValue, setSortValue] = useState("");
   const [loading, setLoading] = useState(false);
 
-
   const handleCategoryChange = (e) => {
     const category = e.target.value;
     if (categories.includes(category)) {
@@ -79,6 +78,7 @@ const FilterPanel = () => {
   const handleClearGenere = () => {
     setSearchGenere("");
     setGeneres([]);
+    setFilters({ ...filters, generes: [] });
   };
   const handleClearSort = () => {
     setSortValue("");
@@ -97,7 +97,7 @@ const FilterPanel = () => {
   }, [searchGenere]);
 
   return (
-    <div className="flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm h-full">
+    <div className='flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm h-full'>
       <div className='flex justify-between items-center p-1'>
         <h2 className='text-lg uppercase text-blue-500 font-bold'>
           Filter Panel

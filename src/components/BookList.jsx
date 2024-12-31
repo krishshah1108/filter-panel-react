@@ -13,9 +13,20 @@ const BookList = () => {
   }
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-      {filteredBooks.map((book) => {
-        return <BookCard key={book.id} book={book} />;
-      })}
+      {filteredBooks.length === 0 ? (
+        <div>
+          <img
+            src='https://www.jaivijaybookcentre.com/public/frontend/images/no-record.png'
+            alt='book not found'
+            className='w-full h-full object-cover'
+          />
+          <h3 className="text-2xl font-bold text-gray-800 ml-[70px]">Book Not Found</h3>
+        </div>
+      ) : (
+        filteredBooks.map((book) => {
+          return <BookCard key={book.id} book={book} />;
+        })
+      )}
     </div>
   );
 };
