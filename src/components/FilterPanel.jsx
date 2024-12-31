@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from "react";
+import { BookContext } from "../context/BookContext";
 
-const FilterPanel = ({ bookData }) => {
-  const distinctCategories = Array.from(new Set(bookData.map((book) => book.category)));
-  const distinctGeneres = Array.from(new Set(bookData.map((book) => book.genre)));
+const FilterPanel = () => {
+  const { bookData , setFilters } = useContext(BookContext);
+  const distinctCategories = Array.from(
+    new Set(bookData.map((book) => book.category))
+  );
+  const distinctGeneres = Array.from(
+    new Set(bookData.map((book) => book.genre))
+  );
 
   const [categories, setCategories] = useState([]);
-  const [maxPrice, setMaxPrice] = useState('');
-  const [searchGenere, setSearchGenere] = useState('');
+  const [maxPrice, setMaxPrice] = useState("");
+  const [searchGenere, setSearchGenere] = useState("");
   const [generes, setGeneres] = useState([]);
   const [progressBarValue, setProgressBarValue] = useState(3);
-  const [sortValue, setSortValue] = useState('');
+  const [sortValue, setSortValue] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleCategoryChange = (e) => {
@@ -44,22 +50,22 @@ const FilterPanel = ({ bookData }) => {
   };
   const handleClearData = () => {
     setCategories([]);
-    setMaxPrice('');
+    setMaxPrice("");
     setProgressBarValue(3);
-    setSortValue('');
-    setSearchGenere('');
+    setSortValue("");
+    setSearchGenere("");
     setGeneres([]);
   };
   const handleClearGenere = () => {
-    setSearchGenere('');
+    setSearchGenere("");
     setGeneres([]);
   };
   const handleClearSort = () => {
-    setSortValue('');
+    setSortValue("");
   };
 
   const filteredGenres = distinctGeneres.filter((genre) =>
-    genre.toLowerCase().includes(searchGenere.toLowerCase()),
+    genre.toLowerCase().includes(searchGenere.toLowerCase())
   );
   useEffect(() => {
     setLoading(true);
@@ -70,26 +76,31 @@ const FilterPanel = ({ bookData }) => {
   }, [searchGenere]);
 
   return (
-    <div className="flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm sticky top-0 sm:max-w-[350px] lg:max-w-[400px]">
-      <div className="flex justify-between items-center p-1">
-        <h2 className="text-lg uppercase text-blue-500 font-bold">Filter Panel</h2>
-        <button className="text-sm font-semibold text-blue-500" onClick={handleClearData}>
+    <div className='flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm sticky top-0 sm:max-w-[350px] lg:max-w-[400px]'>
+      <div className='flex justify-between items-center p-1'>
+        <h2 className='text-lg uppercase text-blue-500 font-bold'>
+          Filter Panel
+        </h2>
+        <button
+          className='text-sm font-semibold text-blue-500'
+          onClick={handleClearData}
+        >
           Clear All
         </button>
       </div>
 
       <div>
-        <h2 className="text-lg font-semibold">Category</h2>
-        <div className="flex flex-col gap-2">
+        <h2 className='text-lg font-semibold'>Category</h2>
+        <div className='flex flex-col gap-2'>
           {distinctCategories.map((category) => (
-            <label key={category} className="flex items-center text-gray-700">
+            <label key={category} className='flex items-center text-gray-700'>
               <input
-                type="checkbox"
-                name="category"
+                type='checkbox'
+                name='category'
                 value={category}
                 onChange={handleCategoryChange}
                 checked={categories.includes(category)}
-                className="mr-2 accent-blue-500"
+                className='mr-2 accent-blue-500'
               />
               {category}
             </label>
@@ -98,133 +109,139 @@ const FilterPanel = ({ bookData }) => {
       </div>
 
       <div>
-        <h2 className="text-lg font-semibold">Price Range</h2>
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex flex-col">
-            <label htmlFor="minPrice" className="text-sm font-medium mb-1">
+        <h2 className='text-lg font-semibold'>Price Range</h2>
+        <div className='flex items-center justify-between gap-4'>
+          <div className='flex flex-col'>
+            <label htmlFor='minPrice' className='text-sm font-medium mb-1'>
               Min Price
             </label>
             <input
-              type="text"
-              id="minPrice"
-              name="minPrice"
-              placeholder="MIN"
+              type='text'
+              id='minPrice'
+              name='minPrice'
+              placeholder='MIN'
               disabled
-              className="w-24 border border-gray-300 rounded p-2 text-sm disabled:bg-white"
+              className='w-24 border border-gray-300 rounded p-2 text-sm disabled:bg-white'
             />
           </div>
-          <div className="flex flex-col">
-            <label htmlFor="maxPrice" className="text-sm font-medium mb-1">
+          <div className='flex flex-col'>
+            <label htmlFor='maxPrice' className='text-sm font-medium mb-1'>
               Max Price
             </label>
             <input
-              type="number"
-              id="maxPrice"
+              type='number'
+              id='maxPrice'
               min={1000}
               step={1000}
-              name="maxPrice"
+              name='maxPrice'
               value={maxPrice}
               onChange={handleMaxPriceChange}
-              placeholder="MAX"
-              className="w-24 border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder='MAX'
+              className='w-24 border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
             />
           </div>
         </div>
       </div>
 
       <div>
-        <h2 className="text-lg font-semibold">Rating</h2>
-        <div className="relative">
+        <h2 className='text-lg font-semibold'>Rating</h2>
+        <div className='relative'>
           <input
-            type="range"
-            min="1"
-            max="5"
-            step="1"
-            className="w-full h-2 bg-gray-200 rounded accent-blue-500"
+            type='range'
+            min='1'
+            max='5'
+            step='1'
+            className='w-full h-2 bg-gray-200 rounded accent-blue-500'
             value={progressBarValue}
             onChange={handleProgressChanger}
           />
         </div>
         <select
-          name="rating"
+          name='rating'
           value={progressBarValue}
           onChange={handleProgressChanger}
-          className="text-gray-700 w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className='text-gray-700 w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500'
         >
-          <option value="1">1 ★ and above</option>
-          <option value="2">2 ★ and above</option>
-          <option value="3">3 ★ and above</option>
-          <option value="4">4 ★ and above</option>
-          <option value="5">5 ★ and above</option>
+          <option value='1'>1 ★ and above</option>
+          <option value='2'>2 ★ and above</option>
+          <option value='3'>3 ★ and above</option>
+          <option value='4'>4 ★ and above</option>
+          <option value='5'>5 ★ and above</option>
         </select>
       </div>
 
       <div>
         <div>
-          <div className="flex justify-between">
-            <h2 className="text-lg font-semibold">Genre</h2>
-            <button className="text-sm font-semibold text-blue-500" onClick={handleClearGenere}>
+          <div className='flex justify-between'>
+            <h2 className='text-lg font-semibold'>Genre</h2>
+            <button
+              className='text-sm font-semibold text-blue-500'
+              onClick={handleClearGenere}
+            >
               Clear
             </button>
           </div>
           <input
-            type="text"
-            placeholder="Search genres..."
+            type='text'
+            placeholder='Search genres...'
             value={searchGenere}
             onChange={handleSearchGenereChange}
-            className="w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+            className='w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4'
           />
         </div>
-        <div className="flex flex-col gap-2 max-h-[130px] overflow-y-auto">
+        <div className='flex flex-col gap-2 max-h-[130px] overflow-y-auto'>
           {loading ? (
             <p>Loading...</p>
           ) : filteredGenres.length > 0 ? (
             filteredGenres.map((genre) => (
-              <label key={genre} className="flex items-center text-gray-700">
+              <label key={genre} className='flex items-center text-gray-700'>
                 <input
-                  type="checkbox"
-                  name="genre"
+                  type='checkbox'
+                  name='genre'
                   value={genre}
                   checked={generes.includes(genre)}
                   onChange={handleGenereSelect}
-                  className="mr-2 accent-blue-500"
+                  className='mr-2 accent-blue-500'
                 />
                 {genre}
               </label>
             ))
           ) : (
-            <p className="text-gray-500 text-center">No genres found</p>
+            <p className='text-gray-500 text-center'>No genres found</p>
           )}
         </div>
       </div>
 
       <div>
-        <div className="flex justify-between">
-          <h2 className="text-lg font-semibold">Sort by Price</h2>
-          <button className="text-sm font-semibold text-blue-500" onClick={handleClearSort}>
+        <div className='flex justify-between'>
+          <h2 className='text-lg font-semibold'>Sort by Price</h2>
+          <button
+            className='text-sm font-semibold text-blue-500'
+            onClick={handleClearSort}
+          >
             Clear
           </button>
         </div>
-        <div className="flex flex-col gap-2">
-          <label className="flex items-center">
+        <div className='flex flex-col gap-2'>
+          <label className='flex items-center'>
             <input
-              type="radio"
-              name="sortPrice"
+              type='radio'
+              name='sortPrice'
               onChange={handleSortChange}
-              value="low-to-high"
-              className="mr-2"
-              checked={sortValue === 'low-to-high'}
+              value='low-to-high'
+              className='mr-2'
+              checked={sortValue === "low-to-high"}
             />
             Low to High
           </label>
-          <label className="flex items-center">
+          <label className='flex items-center'>
             <input
-              type="radio"
-              name="sortPrice"
+              type='radio'
+              name='sortPrice'
               onChange={handleSortChange}
-              value="high-to-low"
-              className="mr-2"
-              checked={sortValue === 'high-to-low'}
+              value='high-to-low'
+              className='mr-2'
+              checked={sortValue === "high-to-low"}
             />
             High to Low
           </label>
