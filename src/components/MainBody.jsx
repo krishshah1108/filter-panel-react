@@ -1,15 +1,14 @@
 import React from "react";
 import FilterPanel from "./FilterPanel";
-import BookList from "./BookList";
+import BookList from "./BookList"; // Use DoctorList for DoctorListing
 
 const MainBody = () => {
   return (
-    <div className='flex gap-8 h-full'>
-      <div className='w-[300px] sticky top-14'>
+    <div className='flex h-full'>
+      <div className='sticky top-14 w-[300px]'>
         <FilterPanel />
       </div>
-
-      <div className='flex-1 overflow-y-auto'>
+      <div className='flex-1 overflow-y-auto p-6'>
         <BookList />
       </div>
     </div>

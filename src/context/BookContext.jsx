@@ -20,17 +20,9 @@ export const BookContextProvider = ({ children }) => {
     const fetchBooks = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5000/books?page=1");
+        const response = await fetch("http://localhost:5000/books");
         const data = await response.json();
         setBookData(data);
-        const distinctCategories = Array.from(
-          new Set(data.map((book) => book.category))
-        );
-        setDistinctCategories(distinctCategories);
-        const distinctGeneres = Array.from(
-          new Set(data.map((book) => book.genre))
-        );
-        setDistinctGeneres(distinctGeneres);
       } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(false);
@@ -40,7 +32,20 @@ export const BookContextProvider = ({ children }) => {
     };
     fetchBooks();
   }, []);
-
+  useEffect(async () => {
+    try {
+      const response = await fetch("http://localhost:5000/books");
+      const data = await response.json();
+      const distinctCategories = Array.from(
+        new Set(data.map((book) => book.category))
+      );
+      setDistinctCategories(distinctCategories);
+      const distinctGeneres = Array.from(
+        new Set(data.map((book) => book.genre))
+      );
+      setDistinctGeneres(distinctGeneres);
+    } catch (error) {}
+  }, []);
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
@@ -56,7 +61,7 @@ export const BookContextProvider = ({ children }) => {
 
         const maxPriceBookMatch =
           filters.maxPrice === "" || filters.maxPrice === Infinity
-            ? true 
+            ? true
             : book.price <= Number(filters.maxPrice);
 
         const genereBookMatch =
