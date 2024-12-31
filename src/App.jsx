@@ -5,9 +5,11 @@ import MainBody from "./components/MainBody";
 
 const App = () => {
   return (
-    <div className='flex flex-col px-6 justify-between h-screen'>
+    <div className='flex flex-col h-screen'>
       <Header />
-      <MainBody />
+      <div className='flex-1 overflow-hidden'>
+        <MainBody />
+      </div>
       <Footer />
     </div>
   );

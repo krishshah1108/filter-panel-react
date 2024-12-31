@@ -2,36 +2,45 @@ import React, { useEffect, useState, useContext } from "react";
 import { BookContext } from "../context/BookContext";
 
 const FilterPanel = () => {
-  const { bookData , setFilters } = useContext(BookContext);
-  const distinctCategories = Array.from(
-    new Set(bookData.map((book) => book.category))
-  );
-  const distinctGeneres = Array.from(
-    new Set(bookData.map((book) => book.genre))
-  );
+  const { filters, setFilters, distinctCategories, distinctGeneres } =
+    useContext(BookContext);
 
   const [categories, setCategories] = useState([]);
-  const [maxPrice, setMaxPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState(Infinity);
   const [searchGenere, setSearchGenere] = useState("");
   const [generes, setGeneres] = useState([]);
   const [progressBarValue, setProgressBarValue] = useState(3);
   const [sortValue, setSortValue] = useState("");
   const [loading, setLoading] = useState(false);
 
+
   const handleCategoryChange = (e) => {
     const category = e.target.value;
     if (categories.includes(category)) {
       setCategories(categories.filter((c) => c !== category));
+      setFilters({
+        ...filters,
+        categories: categories.filter((c) => c !== category),
+      });
     } else {
-      setCategories([...categories, category]);
+      setCategories([...categories, category.toLowerCase()]);
+      setFilters({
+        ...filters,
+        categories: [...categories, category.toLowerCase()],
+      });
     }
   };
   const handleMaxPriceChange = (e) => {
     setMaxPrice(e.target.value);
+    setFilters({
+      ...filters,
+      maxPrice: e.target.value === "" ? Infinity : Number(e.target.value),
+    });
   };
 
   const handleProgressChanger = (e) => {
     setProgressBarValue(e.target.value);
+    setFilters({ ...filters, progressBarValue: e.target.value });
   };
   const handleSearchGenereChange = (e) => {
     setSearchGenere(e.target.value);
@@ -40,21 +49,32 @@ const FilterPanel = () => {
     const genere = e.target.value;
     if (generes.includes(genere)) {
       setGeneres(generes.filter((c) => c !== genere));
+      setFilters({ ...filters, generes: generes.filter((c) => c !== genere) });
     } else {
-      setGeneres([...generes, genere]);
+      setGeneres([...generes, genere.toLowerCase()]);
+      setFilters({ ...filters, generes: [...generes, genere.toLowerCase()] });
     }
   };
 
   const handleSortChange = (e) => {
     setSortValue(e.target.value);
+    setFilters({ ...filters, sortValue: e.target.value });
   };
   const handleClearData = () => {
     setCategories([]);
-    setMaxPrice("");
+    setMaxPrice(Infinity);
     setProgressBarValue(3);
     setSortValue("");
     setSearchGenere("");
     setGeneres([]);
+    setFilters({
+      searchBook: "",
+      categories: [],
+      maxPrice: Infinity,
+      generes: [],
+      progressBarValue: 3,
+      sortValue: "",
+    });
   };
   const handleClearGenere = () => {
     setSearchGenere("");
@@ -62,6 +82,7 @@ const FilterPanel = () => {
   };
   const handleClearSort = () => {
     setSortValue("");
+    setFilters({ ...filters, sortValue: "" });
   };
 
   const filteredGenres = distinctGeneres.filter((genre) =>
@@ -76,7 +97,7 @@ const FilterPanel = () => {
   }, [searchGenere]);
 
   return (
-    <div className='flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm sticky top-0 sm:max-w-[350px] lg:max-w-[400px]'>
+    <div className="flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm h-full">
       <div className='flex justify-between items-center p-1'>
         <h2 className='text-lg uppercase text-blue-500 font-bold'>
           Filter Panel
@@ -97,9 +118,9 @@ const FilterPanel = () => {
               <input
                 type='checkbox'
                 name='category'
-                value={category}
+                value={category.toLowerCase()}
                 onChange={handleCategoryChange}
-                checked={categories.includes(category)}
+                checked={categories.includes(category.toLowerCase())}
                 className='mr-2 accent-blue-500'
               />
               {category}
@@ -198,8 +219,8 @@ const FilterPanel = () => {
                 <input
                   type='checkbox'
                   name='genre'
-                  value={genre}
-                  checked={generes.includes(genre)}
+                  value={genre.toLowerCase()}
+                  checked={generes.includes(genre.toLowerCase())}
                   onChange={handleGenereSelect}
                   className='mr-2 accent-blue-500'
                 />
