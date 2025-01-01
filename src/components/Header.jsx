@@ -25,7 +25,6 @@ const Header = () => {
           onChange={handleSearchBook}
           className='p-2 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 h-10 w-full border border-gray-300 shadow-sm'
         />
-        <CiSearch className='text-2xl cursor-pointer bg-white border-gray-300 border text-blue-600 rounded-md py-2 w-10 h-10 shadow-md' />
       </div>
 
       <div className='text-black-500 flex items-center'>

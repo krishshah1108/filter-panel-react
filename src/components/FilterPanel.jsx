@@ -97,7 +97,7 @@ const FilterPanel = () => {
   }, [searchGenere]);
 
   return (
-    <div className='sticky top-12 flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm h-screen'>
+    <div className='sticky top-12 flex flex-col max-w-[300px] w-full gap-3 p-2 bg-[#ebe8e8] border border-gray-200 rounded-sm shadow-sm '>
       <div className='flex justify-between items-center p-1'>
         <h2 className='text-lg uppercase text-blue-500 font-bold'>
           Filter Panel
