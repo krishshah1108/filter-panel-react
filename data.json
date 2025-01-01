@@ -301,13 +301,14 @@
       "available": true
     }
   ],
- "doctors": [
+ "doctors": 
+ [
   {
     "id": 1,
-    "name": "Dr. John Smith",
+    "name": "Dr. Sarah Johnson",
     "specialty": "Cardiologist",
-    "experience": "12 years",
-    "image": "https://www.w3schools.com/w3images/avatar2.png",
+    "experience": "15 years",
+    "image": "https://randomuser.me/api/portraits/women/65.jpg",
     "availability": [
       {
         "day": "Monday",
@@ -316,136 +317,251 @@
           { "start": "14:00", "end": "16:00" }
         ]
       },
-      { "day": "Tuesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
-      { "day": "Thursday", "slots": [{ "start": "15:00", "end": "17:00" }] }
+      { "day": "Wednesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
+      { "day": "Friday", "slots": [{ "start": "15:00", "end": "17:00" }] }
     ]
   },
   {
     "id": 2,
-    "name": "Dr. Emily Johnson",
-    "specialty": "Dentist",
-    "experience": "8 years",
-    "image": "https://www.w3schools.com/w3images/avatar6.png",
+    "name": "Dr. Anil Kumar",
+    "specialty": "Cardiologist",
+    "experience": "10 years",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg",
     "availability": [
-      { "day": "Monday", "slots": [{ "start": "09:00", "end": "11:00" }] },
-      { "day": "Tuesday", "slots": [{ "start": "13:00", "end": "15:00" }] },
+      { "day": "Tuesday", "slots": [{ "start": "09:00", "end": "12:00" }] },
+      { "day": "Thursday", "slots": [{ "start": "13:00", "end": "15:00" }] }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Dr. Priya Singh",
+    "specialty": "Dermatologist",
+    "experience": "8 years",
+    "image": "https://randomuser.me/api/portraits/women/43.jpg",
+    "availability": [
       {
-        "day": "Thursday",
+        "day": "Monday",
+        "slots": [
+          { "start": "08:00", "end": "10:00" },
+          { "start": "15:00", "end": "17:00" }
+        ]
+      },
+      { "day": "Friday", "slots": [{ "start": "14:00", "end": "16:00" }] }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Dr. Michael Chen",
+    "specialty": "Orthopedic",
+    "experience": "12 years",
+    "image": "https://randomuser.me/api/portraits/men/47.jpg",
+    "availability": [
+      {
+        "day": "Wednesday",
         "slots": [
           { "start": "09:00", "end": "11:00" },
           { "start": "14:00", "end": "16:00" }
         ]
       },
-      { "day": "Sunday", "slots": [{ "start": "10:00", "end": "12:00" }] }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Dr. Michael Brown",
-    "specialty": "Neurologist",
-    "experience": "15 years",
-    "image": "https://www.w3schools.com/w3images/avatar4.png",
-    "availability": [
-      {
-        "day": "Tuesday",
-        "slots": [
-          { "start": "09:00", "end": "11:00" },
-          { "start": "13:00", "end": "15:00" }
-        ]
-      },
-      { "day": "Thursday", "slots": [{ "start": "10:00", "end": "12:00" }] },
-      { "day": "Saturday", "slots": [{ "start": "14:00", "end": "16:00" }] }
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Dr. Sarah Williams",
-    "specialty": "Orthopedic",
-    "experience": "10 years",
-    "image": "https://www.w3schools.com/w3images/avatar5.png",
-    "availability": [
-      { "day": "Tuesday", "slots": [{ "start": "11:00", "end": "13:00" }] },
-      { "day": "Wednesday", "slots": [{ "start": "09:00", "end": "11:00" }] },
-      { "day": "Friday", "slots": [{ "start": "14:00", "end": "16:00" }] }
+      { "day": "Thursday", "slots": [{ "start": "10:00", "end": "12:00" }] }
     ]
   },
   {
     "id": 5,
-    "name": "Dr. James Davis",
-    "specialty": "General Physician",
-    "experience": "7 years",
-    "image": "https://www.w3schools.com/w3images/avatar2.png",
+    "name": "Dr. Emily Brown",
+    "specialty": "Pediatrician",
+    "experience": "6 years",
+    "image": "https://randomuser.me/api/portraits/women/79.jpg",
     "availability": [
-      { "day": "Monday", "slots": [{ "start": "08:00", "end": "10:00" }] },
-      { "day": "Wednesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
-      { "day": "Saturday", "slots": [{ "start": "12:00", "end": "14:00" }] }
+      { "day": "Monday", "slots": [{ "start": "13:00", "end": "15:00" }] },
+      { "day": "Friday", "slots": [{ "start": "09:00", "end": "11:00" }] }
     ]
   },
   {
     "id": 6,
-    "name": "Dr. Olivia Martinez",
-    "specialty": "Pediatrician",
-    "experience": "11 years",
-    "image": "https://www.w3schools.com/w3images/avatar6.png",
+    "name": "Dr. Rajesh Patel",
+    "specialty": "Neurologist",
+    "experience": "9 years",
+    "image": "https://randomuser.me/api/portraits/men/59.jpg",
     "availability": [
       {
-        "day": "Monday",
+        "day": "Tuesday",
         "slots": [
           { "start": "10:00", "end": "12:00" },
           { "start": "15:00", "end": "17:00" }
         ]
       },
-      { "day": "Thursday", "slots": [{ "start": "09:00", "end": "11:00" }] },
-      { "day": "Sunday", "slots": [{ "start": "09:00", "end": "11:00" }] }
+      { "day": "Thursday", "slots": [{ "start": "09:00", "end": "11:00" }] }
     ]
   },
   {
     "id": 7,
-    "name": "Dr. William Taylor",
+    "name": "Dr. Alice Parker",
     "specialty": "Dermatologist",
-    "experience": "9 years",
-    "image": "https://www.w3schools.com/w3images/avatar4.png",
+    "experience": "7 years",
+    "image": "https://randomuser.me/api/portraits/women/81.jpg",
     "availability": [
-      { "day": "Tuesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
-      { "day": "Wednesday", "slots": [{ "start": "09:00", "end": "11:00" }] },
-      { "day": "Saturday", "slots": [{ "start": "14:00", "end": "16:00" }] }
+      {
+        "day": "Wednesday",
+        "slots": [
+          { "start": "08:00", "end": "10:00" },
+          { "start": "14:00", "end": "16:00" }
+        ]
+      },
+      { "day": "Friday", "slots": [{ "start": "12:00", "end": "14:00" }] }
     ]
   },
   {
     "id": 8,
-    "name": "Dr. Sophia Anderson",
-    "specialty": "Psychiatrist",
-    "experience": "14 years",
-    "image": "https://www.w3schools.com/w3images/avatar5.png",
+    "name": "Dr. David Miller",
+    "specialty": "Cardiologist",
+    "experience": "18 years",
+    "image": "https://randomuser.me/api/portraits/men/50.jpg",
     "availability": [
-      { "day": "Monday", "slots": [{ "start": "08:00", "end": "10:00" }] },
-      { "day": "Tuesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
-      { "day": "Friday", "slots": [{ "start": "14:00", "end": "16:00" }] }
+      {
+        "day": "Monday",
+        "slots": [
+          { "start": "09:00", "end": "11:00" },
+          { "start": "14:00", "end": "16:00" }
+        ]
+      },
+      { "day": "Wednesday", "slots": [{ "start": "12:00", "end": "14:00" }] }
     ]
   },
   {
     "id": 9,
-    "name": "Dr. Ethan Moore",
-    "specialty": "Cardiologist",
-    "experience": "16 years",
-    "image": "https://www.w3schools.com/w3images/avatar2.png",
+    "name": "Dr. Linda Robinson",
+    "specialty": "Pediatrician",
+    "experience": "11 years",
+    "image": "https://randomuser.me/api/portraits/women/90.jpg",
     "availability": [
-      { "day": "Monday", "slots": [{ "start": "08:00", "end": "10:00" }] },
-      { "day": "Thursday", "slots": [{ "start": "12:00", "end": "14:00" }] }
+      { "day": "Tuesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
+      { "day": "Thursday", "slots": [{ "start": "15:00", "end": "17:00" }] }
     ]
   },
   {
     "id": 10,
-    "name": "Dr. Mia Wilson",
+    "name": "Dr. Chris Wong",
+    "specialty": "Orthopedic",
+    "experience": "13 years",
+    "image": "https://randomuser.me/api/portraits/men/38.jpg",
+    "availability": [
+      { "day": "Monday", "slots": [{ "start": "08:00", "end": "10:00" }] },
+      { "day": "Friday", "slots": [{ "start": "14:00", "end": "16:00" }] }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Dr. Ethan Cooper",
+    "specialty": "Neurologist",
+    "experience": "14 years",
+    "image": "https://randomuser.me/api/portraits/men/25.jpg",
+    "availability": [
+      { "day": "Monday", "slots": [{ "start": "10:00", "end": "12:00" }] },
+      { "day": "Thursday", "slots": [{ "start": "13:00", "end": "15:00" }] }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dr. Clara Lewis",
     "specialty": "Endocrinologist",
+    "experience": "9 years",
+    "image": "https://randomuser.me/api/portraits/women/53.jpg",
+    "availability": [
+      { "day": "Tuesday", "slots": [{ "start": "09:00", "end": "11:00" }] },
+      { "day": "Friday", "slots": [{ "start": "14:00", "end": "16:00" }] }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Dr. Mark Taylor",
+    "specialty": "Psychiatrist",
+    "experience": "12 years",
+    "image": "https://randomuser.me/api/portraits/men/41.jpg",
+    "availability": [
+      { "day": "Monday", "slots": [{ "start": "14:00", "end": "16:00" }] },
+      { "day": "Wednesday", "slots": [{ "start": "08:00", "end": "10:00" }] }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Dr. Mia Lopez",
+    "specialty": "Gynecologist",
+    "experience": "7 years",
+    "image": "https://randomuser.me/api/portraits/women/23.jpg",
+    "availability": [
+      { "day": "Tuesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
+      { "day": "Friday", "slots": [{ "start": "13:00", "end": "15:00" }] }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Dr. William Davis",
+    "specialty": "Orthopedic",
     "experience": "10 years",
-    "image": "https://www.w3schools.com/w3images/avatar6.png",
+    "image": "https://randomuser.me/api/portraits/men/62.jpg",
+    "availability": [
+      { "day": "Monday", "slots": [{ "start": "09:00", "end": "11:00" }] },
+      { "day": "Thursday", "slots": [{ "start": "15:00", "end": "17:00" }] }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Dr. Olivia Martinez",
+    "specialty": "Neurologist",
+    "experience": "11 years",
+    "image": "https://randomuser.me/api/portraits/women/34.jpg",
+    "availability": [
+      { "day": "Wednesday", "slots": [{ "start": "14:00", "end": "16:00" }] },
+      { "day": "Friday", "slots": [{ "start": "09:00", "end": "11:00" }] }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Dr. Lucas Wilson",
+    "specialty": "Psychiatrist",
+    "experience": "15 years",
+    "image": "https://randomuser.me/api/portraits/men/74.jpg",
+    "availability": [
+      { "day": "Tuesday", "slots": [{ "start": "08:00", "end": "10:00" }] },
+      { "day": "Thursday", "slots": [{ "start": "13:00", "end": "15:00" }] }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Dr. Sofia Harris",
+    "specialty": "Pediatrician",
+    "experience": "5 years",
+    "image": "https://randomuser.me/api/portraits/women/12.jpg",
+    "availability": [
+      { "day": "Monday", "slots": [{ "start": "09:00", "end": "11:00" }] },
+      { "day": "Friday", "slots": [{ "start": "12:00", "end": "14:00" }] }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Dr. Benjamin White",
+    "specialty": "Cardiologist",
+    "experience": "20 years",
+    "image": "https://randomuser.me/api/portraits/men/33.jpg",
     "availability": [
       { "day": "Wednesday", "slots": [{ "start": "09:00", "end": "11:00" }] },
-      { "day": "Friday", "slots": [{ "start": "13:00", "end": "15:00" }] }
+      { "day": "Thursday", "slots": [{ "start": "14:00", "end": "16:00" }] }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Dr. Emma Thomas",
+    "specialty": "Endocrinologist",
+    "experience": "8 years",
+    "image": "https://randomuser.me/api/portraits/women/54.jpg",
+    "availability": [
+      { "day": "Tuesday", "slots": [{ "start": "10:00", "end": "12:00" }] },
+      { "day": "Thursday", "slots": [{ "start": "13:00", "end": "15:00" }] }
     ]
   }
 ]
+
 
 
 

@@ -29,7 +29,7 @@ const Header = () => {
 
       <div className='text-black-500 flex items-center'>
         <Link
-          to='/doctorListing'
+          to='/doctorsListing'
           className='hover:text-blue-600 cursor-pointer'
         >
           Doctors

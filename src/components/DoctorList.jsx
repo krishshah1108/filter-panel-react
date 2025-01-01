@@ -4,7 +4,7 @@ import { doctorContext } from '../context/DoctorContext';
 
 const DoctorList = () => {
   const { doctorData, loading } = useContext(doctorContext);
-
+  
   return loading ? (
    <p>Loading...</p>
   ) : doctorData.length === 0 ? (

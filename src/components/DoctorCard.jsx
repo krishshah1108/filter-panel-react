@@ -1,9 +1,13 @@
 import React from 'react';
-import { FaUserMd } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const DoctorCard = ({ doctor }) => {
+  const navigate = useNavigate();
   return (
-    <div className="max-w-[300px] cursor-pointer rounded-lg overflow-hidden shadow-md bg-white border border-gray-200 hover:shadow-lg ">
+    <div
+      onClick={() => navigate(`/doctor/${doctor.id}`)}
+      className="max-w-[300px] cursor-pointer rounded-lg overflow-hidden shadow-md bg-white border border-gray-200 hover:shadow-lg "
+    >
       <img className="w-full h-40 object-cover" src={doctor.image} alt={doctor.name} />
       <div className="p-4">
         <h2 className="text-xl font-bold text-gray-800">{doctor.name}</h2>

@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import DoctorList from './components/DoctorList';
+import DoctorDetails from './components/DoctorDetails';
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <div className="flex-1 overflow-y-auto">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/doctorListing" element={<DoctorList />} />
+          <Route path="/doctorsListing" element={<DoctorList />} />
+          <Route path="/doctor/:id" element={<DoctorDetails />} />
         </Routes>
       </div>
 

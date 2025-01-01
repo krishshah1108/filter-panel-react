@@ -16,6 +16,7 @@ export const BookContextProvider = ({ children }) => {
     progressBarValue: 3,
     sortValue: "",
   });
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -23,29 +24,26 @@ export const BookContextProvider = ({ children }) => {
         const response = await fetch("http://localhost:5000/books");
         const data = await response.json();
         setBookData(data);
+
+        // Get distinct categories and genres after data is fetched
+        const distinctCategories = Array.from(
+          new Set(data.map((book) => book.category))
+        );
+        setDistinctCategories(distinctCategories);
+
+        const distinctGeneres = Array.from(
+          new Set(data.map((book) => book.genre))
+        );
+        setDistinctGeneres(distinctGeneres);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false);
       } finally {
         setLoading(false);
       }
     };
     fetchBooks();
-  }, []);
-  useEffect(async () => {
-    try {
-      const response = await fetch("http://localhost:5000/books");
-      const data = await response.json();
-      const distinctCategories = Array.from(
-        new Set(data.map((book) => book.category))
-      );
-      setDistinctCategories(distinctCategories);
-      const distinctGeneres = Array.from(
-        new Set(data.map((book) => book.genre))
-      );
-      setDistinctGeneres(distinctGeneres);
-    } catch (error) {}
-  }, []);
+  }, []); // Run only once when the component mounts
+
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
@@ -78,16 +76,20 @@ export const BookContextProvider = ({ children }) => {
           ratingBookMatch
         );
       });
+
+      // Sorting
       if (filters.sortValue === "low-to-high") {
         filteredData.sort((a, b) => a.price - b.price);
       } else if (filters.sortValue === "high-to-low") {
         filteredData.sort((a, b) => b.price - a.price);
       }
+
       setFilteredBooks(filteredData);
       setLoading(false);
     }, 500);
     return () => clearTimeout(timer);
-  }, [filters, bookData]);
+  }, [filters, bookData]); // Re-run when filters or bookData changes
+
   return (
     <BookContext.Provider
       value={{
@@ -104,3 +106,4 @@ export const BookContextProvider = ({ children }) => {
     </BookContext.Provider>
   );
 };
+  
